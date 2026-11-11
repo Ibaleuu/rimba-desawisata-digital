@@ -43,6 +43,7 @@ Peta integrasi, event analytics, brief desain, dan prompt handoff ada di:
 - `WORKFLOW_7_PLATFORM.md` — peran dan status Codex, Notion, Linear, Figma, Antigravity, GitHub, PostHog.
 - `FIGMA_HANDOFF.md` — layar, komponen, alur, dan batas produk untuk desain.
 - `ANTIGRAVITY_PROMPT.md` — prompt implementasi yang konsisten dengan Studi Kasus 3.
+- Repo GitHub (private): https://github.com/Ibaleuu/rimba-desawisata-digital
 
 Build statis: `npm run build` (Node.js 20+). Analytics PostHog project Rimba sudah dikonfigurasi lokal melalui `.env.local` (diabaikan Git). Build menyuntikkan konfigurasi runtime hanya ke `dist/`. Untuk GitHub Actions, siapkan repository secrets `POSTHOG_PROJECT_TOKEN` serta `POSTHOG_HOST`.
 
@@ -50,4 +51,3 @@ Notion: https://app.notion.com/p/415213332eb081c7819de0e074ef1627?pvs=204
 Linear: https://linear.app/ibaleuu/project/desawisata-digital-6dcfa2717daf
 
 Figma Design: https://www.figma.com/design/qaf4j7YX8E1S30dOR3mJZa (file terbuat; frame layar masih menunggu proses import).
-

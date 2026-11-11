@@ -6,8 +6,8 @@
 | Notion | PRD, keputusan, cakupan, dan catatan koordinasi | Draft PRD/workflow dibuat pada Notion dan ditautkan ke project Linear |
 | Linear | Backlog, milestone, issue, dan progres | Project DesaWisata Digital; issue DW-01 sampai DW-42, 5 milestone |
 | Figma | Source of truth desain dan handoff frame | File Design dibuat dan ditautkan; layar belum diimpor karena capture lokal dihentikan proteksi URL Windows. Brief tersedia di `FIGMA_HANDOFF.md`: https://www.figma.com/design/qaf4j7YX8E1S30dOR3mJZa |
-| Antigravity | Handoff prompt untuk bantuan implementasi | Belum tersambung; salin `ANTIGRAVITY_PROMPT.md` saat membuka project |
-| GitHub | Version control, review perubahan, CI build | Workflow dan PR template siap; repo remote belum dibuat/ditautkan |
+| Antigravity | Handoff prompt untuk bantuan implementasi | Aktif di workspace `desawisata-digital` mengikuti `ANTIGRAVITY_PROMPT.md` |
+| GitHub | Version control, review perubahan, CI build | Repo private [Ibaleuu/rimba-desawisata-digital](https://github.com/Ibaleuu/rimba-desawisata-digital) tersedia; workflow CI dan PR template siap |
 | PostHog | Analitik penggunaan tanpa data pribadi | Project Rimba telah disiapkan; token lokal sudah dikonfigurasi, secrets CI masih perlu diisi |
 
 ## Siklus perubahan
