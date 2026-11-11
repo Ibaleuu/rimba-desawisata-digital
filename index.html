@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173b31" />
+    <meta name="description" content="Jelajahi alam, budaya, dan keramahan desa wisata Indonesia." />
+    <title>Rimba — Jelajahi Desa Wisata</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#beranda" aria-label="Rimba, beranda"><span class="brand-mark">r</span><span>rimba<span class="brand-dot">.</span></span></a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a class="active" href="#destinasi">Destinasi</a><a href="#pengalaman">Pengalaman</a><a href="#umkm">Produk lokal</a>
+      </nav>
+      <div class="top-actions"><button class="icon-btn" aria-label="Cari" onclick="document.querySelector('#search-input').focus()">⌕</button><button class="btn btn-outline admin-open">Portal pengelola <span>↗</span></button><button class="avatar" aria-label="Profil pengguna">A</button></div>
+      <button class="mobile-menu" aria-label="Buka menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </header>
+    <main>
+      <section class="hero" id="beranda">
+        <div class="hero-image"></div><div class="hero-shade"></div>
+        <div class="hero-content"><div class="eyebrow light"><span class="eyebrow-line"></span> WAKTUNYA PULANG KE ALAM</div>
+          <h1>Temukan cerita<br />di setiap <em>perjalanan.</em></h1><p>Jelajahi pesona desa, temui budaya yang hidup, dan bawa pulang cerita yang tak terlupakan.</p>
+          <a class="btn btn-lime" href="#destinasi">Jelajahi destinasi <span>↗</span></a>
+        </div>
+        <div class="hero-note"><span class="note-line"></span><span>Desa Penglipuran, Bali<br /><small>08°07' LS · 115°21' BT</small></span></div>
+        <div class="hero-pagination"><span class="page-current">01</span><span class="page-track"><i></i></span><span>04</span></div>
+        <div class="hero-stamp">DESA<br />PUNYA<br />CERITA <b>✳</b></div>
+      </section>
+      <section class="search-wrap" aria-label="Cari destinasi dan paket">
+        <div class="search-field"><span class="search-symbol">⌕</span><label for="search-input"><small>Mau ke mana?</small><input id="search-input" placeholder="Cari destinasi atau aktivitas" /></label></div>
+        <div class="search-field search-date"><span class="search-symbol">▦</span><label for="search-date"><small>Kapan berangkat?</small><input id="search-date" type="date" /></label></div>
+        <div class="search-field search-guest"><span class="search-symbol">♙</span><label for="search-guests"><small>Jumlah peserta</small><select id="search-guests"><option value="">Pilih peserta</option><option>1–2 orang</option><option>3–5 orang</option><option>6+ orang</option></select></label></div>
+        <button class="btn btn-green" id="search-button">Cari perjalanan <span>→</span></button>
+      </section>
+      <section class="section intro" id="destinasi"><div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> PILIHAN UNTUKMU</div><h2>Destinasi <em>pilihan.</em></h2></div><a class="text-link" href="#destinasi-grid">Lihat semua destinasi <span>↗</span></a></div>
+        <div class="filter-row"><p>Tempat istimewa, dipilih untuk perjalanan berikutnya.</p><div class="filters" role="group" aria-label="Filter destinasi"><button class="filter active" data-filter="Semua">Semua</button><button class="filter" data-filter="Alam">Alam</button><button class="filter" data-filter="Budaya">Budaya</button><button class="filter" data-filter="Petualangan">Petualangan</button></div></div>
+        <div class="destination-grid" id="destinasi-grid"></div>
+      </section>
+      <section class="experience-band" id="pengalaman"><div class="experience-copy"><div class="eyebrow light"><span class="eyebrow-line"></span> LEBIH DARI SEKADAR LIBURAN</div><h2>Jalani hidup<br />seperti <em>warga lokal.</em></h2><p>Belajar menenun, menyusuri sawah saat pagi, atau memasak resep turun-temurun bersama tuan rumah. Pengalaman kecil yang tinggal lama di hati.</p><button class="btn btn-lime" id="show-packages">Temukan pengalaman <span>↗</span></button></div><div class="experience-photo"><div class="photo-caption"><span>01 — 03</span><b>Belajar. Berbagi. Menjadi bagian.</b><span>✳</span></div></div></section>
+      <section class="section packages" id="paket"><div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> PERJALANAN YANG DIKURASI</div><h2>Ruang untuk <em>mengalami.</em></h2></div><a class="text-link" href="#paket">Lihat semua paket <span>↗</span></a></div><div class="package-grid" id="package-grid"></div></section>
+      <section class="local-section" id="umkm"><div class="local-photo"></div><div class="local-copy"><div class="eyebrow"><span class="eyebrow-line"></span> DIBUAT DENGAN HATI</div><h2>Cerita lokal,<br /><em>dibawa pulang.</em></h2><p>Di balik setiap produk, ada tangan terampil dan cerita yang diwariskan. Dukung usaha warga, bawa pulang sepotong kebaikan.</p><div class="local-products" id="local-products"></div><a class="text-link" href="#umkm">Jelajahi semua produk lokal <span>↗</span></a></div></section>
+      <section class="quote-section"><div class="quote-mark">“</div><blockquote>Perjalanan terbaik bukan tentang seberapa jauh kita pergi,<br />tapi tentang seberapa dekat kita merasa.</blockquote><div class="quote-author"><span class="author-avatar">M</span><span><b>Made Sari</b><small>Pengelola Desa Penglipuran</small></span></div><span class="quote-flower">✳</span></section>
+      <section class="newsletter"><div><span class="eyebrow light"><span class="eyebrow-line"></span> CERITA DARI DESA</span><h2>Temukan inspirasimu<br />di tempat yang tak terduga.</h2></div><a class="btn btn-lime" href="#destinasi">Mulai menjelajah <span>↗</span></a></section>
+    </main>
+    <footer><a class="brand brand-light" href="#beranda"><span class="brand-mark">r</span><span>rimba<span class="brand-dot">.</span></span></a><p>Perjalanan yang berarti, untuk desa yang berdaya.</p><div class="footer-links"><a href="#destinasi">Jelajahi</a><a href="#umkm">Produk lokal</a><a href="#pengalaman">Tentang kami</a></div><small>© 2026 Rimba Desa Wisata Digital</small></footer>
+    <div id="modal-root"></div><div class="toast" id="toast" role="status"></div>
+    <script src="analytics.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
