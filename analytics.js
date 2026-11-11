@@ -9,6 +9,23 @@
   };
   const config = window.RIMBA_ANALYTICS;
   if (!config?.projectToken || !config?.apiHost) return;
+  const pendingEvents = [];
+  let initialized = false;
+  window.rimbaTrack = function (event, properties = {}) {
+    const allowedKeys = ALLOWED_EVENTS[event];
+    if (!allowedKeys) return;
+    const safeProps = {};
+    for (const key of allowedKeys) {
+      if (properties[key] !== undefined && properties[key] !== null) {
+        safeProps[key] = properties[key];
+      }
+    }
+    if (initialized && window.posthog) {
+      window.posthog.capture(event, safeProps);
+    } else if (pendingEvents.length < 50) {
+      pendingEvents.push([event, safeProps]);
+    }
+  };
   const script = document.createElement('script');
   script.async = true;
   const assetHost = config.apiHost
@@ -27,17 +44,10 @@
       persistence: 'memory',
       ip: false,
     });
-    window.rimbaTrack = function (event, properties = {}) {
-      const allowedKeys = ALLOWED_EVENTS[event];
-      if (!allowedKeys) return;
-      const safeProps = {};
-      for (const key of allowedKeys) {
-        if (properties[key] !== undefined && properties[key] !== null) {
-          safeProps[key] = properties[key];
-        }
-      }
-      window.posthog.capture(event, safeProps);
-    };
+    initialized = true;
+    for (const [event, properties] of pendingEvents.splice(0)) {
+      window.posthog.capture(event, properties);
+    }
   };
   document.head.appendChild(script);
 })();

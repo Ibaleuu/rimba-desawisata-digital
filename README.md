@@ -4,13 +4,14 @@ Prototipe web responsif untuk Studi Kasus 3. Aplikasi mencakup katalog wisatawan
 
 ## Menjalankan
 
-Buka `index.html` di browser. Untuk development, jalankan server statis dari folder ini, misalnya:
+Untuk menjalankan prototipe sekaligus mengirim analytics ke PostHog, build dulu lalu sajikan folder `dist`:
 
 ```bash
-python -m http.server 8000
+npm run build
+python -m http.server 8000 --directory dist
 ```
 
-Lalu buka `http://localhost:8000`.
+Buka `http://localhost:8000`. Build membaca `.env.local` untuk menyuntikkan konfigurasi PostHog ke `dist/`. Membuka `index.html` langsung atau menjalankan server dari folder proyek tanpa `--directory dist` tetap menampilkan web, tetapi analytics tidak aktif.
 
 ## Alur wisatawan
 
